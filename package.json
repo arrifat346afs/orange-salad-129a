@@ -13,6 +13,16 @@
     "preview_image_url": "https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/e42eec61-db86-49c8-7b29-c3ed4783e400/public",
     "dash": true
   },
+  "scripts": {
+    "dev": "next dev --turbo",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
+  },
   "dependencies": {
     "@ai-sdk/anthropic": "^1.1.2",
     "@ai-sdk/deepseek": "^0.1.3",
@@ -104,7 +114,6 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
-    "@opennextjs/cloudflare": "1.0.0-beta.3",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
@@ -114,17 +123,7 @@
     "eslint-config-next": "latest",
     "postcss": "latest",
     "tailwindcss": "^3.3.5",
-    "typescript": "latest",
-    "wrangler": "4.12.0"
-  },
-  "scripts": {
-    "build": "next build",
-    "cf-typegen": "wrangler types --env-interface CloudflareEnv env.d.ts",
-    "check": "opennextjs-cloudflare build && tsc && wrangler deploy --dry-run",
-    "deploy": "opennextjs-cloudflare build && wrangler deploy",
-    "dev": "next dev",
-    "lint": "next lint",
-    "preview": "opennextjs-cloudflare build && wrangler dev",
-    "start": "next start"
+    "typescript": "latest"
   }
 }
+
